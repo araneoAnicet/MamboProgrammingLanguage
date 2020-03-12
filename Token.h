@@ -2,10 +2,11 @@
 #include "TokenValue.h"
 #include <string>
 
-template<class T>
+template<typename T>
 struct Token {
-    Token(std::string name, TokenValue<T>* value, int line_index, int expression_index) {
+    Token(std::string name, std::string type, TokenValue<T>* value, int line_index, int expression_index) {
         this->name = name;
+        this->type = type;
         this->value = value;
         this->line_index = line_index;
         this->expression_index = expression_index;
@@ -13,5 +14,6 @@ struct Token {
     int line_index;
     int expression_index;
     TokenValue<T>* value;
+    std::string type;
     std::string name;
 };
