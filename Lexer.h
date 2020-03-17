@@ -10,7 +10,7 @@
 class Lexer {
 private:
     std::vector<Token*> tokens;
-    Tokenizer tokenizer;
+    // Tokenizer tokenizer;
 public:
     void identify_lexemes(std::string filename);
     std::vector<Token*> tokenize();
