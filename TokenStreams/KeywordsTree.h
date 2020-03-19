@@ -3,7 +3,6 @@
 #include <string>
 #include <stack>
 #include <map>
-#include <iostream>
 
 
 class KeywordsTree {
