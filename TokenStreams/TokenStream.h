@@ -5,6 +5,7 @@
 
 class TokenStream {
 protected:
+    TokenStream* instance = nullptr;
     bool token_is_generated;
     std::string string_input;
     Token* token_addr;
