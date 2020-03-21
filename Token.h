@@ -23,13 +23,11 @@
 
 
 struct Token {
-    Token(std::string name, int type, std::string value) {
-        this->name = name;
+    Token(int type, std::string value) {
         this->type = type;
         this->value = value;
     }
     int line_index;
     std::string value;
     int type;
-    std::string name;
 };
