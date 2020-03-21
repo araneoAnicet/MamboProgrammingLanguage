@@ -6,21 +6,22 @@
 
 class Tokenizer {
 public:
-    static std::map<char, std::string> dividing_symbols;
+    static std::map<char, int> dividing_symbols;
+    template<int token_type>
     Token* generate_token(std::string lexeme);
 };
 
-std::map<char, std::string> Tokenizer::dividing_symbols = {
-        {'+', "PLUS"},
-        {'-', "MINUS"},
-        {'*', "MULT"},
-        {'/', "DIV"},
-        {'\"', "QUOTE_DOUBLE"},
-        {'\'', "QUOTE"},
-        {'(', "BRACKET_OPEN"},
-        {')', "BRACKET_CLOSE"},
-        {'[', "BRACKET_OPEN_SQR"},
-        {']', "BRACKET_CLOSE_SQR"},
-        {'{', "BRACKET_OPEN_FIG"},
-        {'}', "BRACKET_CLOSE_FIG"}
+std::map<char, int> Tokenizer::dividing_symbols = {
+        {'+', MMB_PLUS},
+        {'-', MMB_MINUS},
+        {'*', MMB_MULT},
+        {'/', MMB_DIV},
+        {'\"', MMB_QUOTE_DOUBLE},
+        {'\'', MMB_QUOTE},
+        {'(', MMB_BRCKT_OPN},
+        {')', MMB_BRCKT_CLS},
+        {'[', MMB_BRCKT_OPN_SQR},
+        {']', MMB_BRCKT_CLS_SQR},
+        {'{', MMB_BRCKT_OPN_FIG},
+        {'}', MMB_BRCKT_CLS_FIG}
 };
