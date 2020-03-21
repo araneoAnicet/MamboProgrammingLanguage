@@ -8,7 +8,7 @@ class Tokenizer {
 public:
     static std::map<char, int> dividing_symbols;
     template<int token_type>
-    Token* generate_token(std::string lexeme);
+    static Token* generate_token(std::string lexeme);
 };
 
 std::map<char, int> Tokenizer::dividing_symbols = {
