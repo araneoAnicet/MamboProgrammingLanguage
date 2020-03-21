@@ -1,5 +1,4 @@
 #pragma once
-#include "TokenValue.h"
 #include <string>
 
 // token types
