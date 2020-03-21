@@ -9,11 +9,7 @@ void TokenStream::set_token_addr(Token* token_addr) {
     this->token_addr = token_addr;
 }
 
-void TokenStream::set_first_character_input(char first_input) {
-    this->prev_input = first_input;
-}
-
-bool TokenStream::has_changed_state() {
-    return this->has_changed_state;
+bool TokenStream::has_generated_token() {
+    return this->token_is_generated;
 }
 
