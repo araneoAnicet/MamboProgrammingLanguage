@@ -10,7 +10,7 @@ void TokenStream::set_token_addr(Token* token_addr) {
 }
 
 bool TokenStream::has_changed_state() {
-    return this->changed_state;
+    return this->state_is_changed;
 }
 
 TokenStream* TokenStream::get_next_state() {

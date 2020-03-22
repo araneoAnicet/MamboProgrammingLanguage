@@ -7,11 +7,12 @@ class TokenStream {
 protected:
     static TokenStream* instance;
     TokenStream* next_state;
-    bool changed_state = false;
+    bool state_is_changed = false;
     bool token_is_generated;
     std::string string_input;
     Token* token_addr;
 public:
+    virtual void interrupt_stream() = 0;
     virtual void generate_instance() = 0;
     void set_string_input(std::string string_input);
     void set_token_addr(Token* token_addr);
