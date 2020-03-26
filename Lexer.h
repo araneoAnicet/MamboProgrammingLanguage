@@ -1,5 +1,4 @@
 #pragma once
-#include "Token.h"
 #include "Tokenizer.h"
 #include <string>
 #include <vector>
@@ -9,9 +8,8 @@
 
 class Lexer {
 private:
-    std::vector<Token*> tokens;
-    // Tokenizer tokenizer;
+    std::vector<Token> tokens;
 public:
     void identify_lexemes(std::string filename);
-    std::vector<Token*> tokenize();
+    std::vector<Token> tokenize();
 };

@@ -13,8 +13,6 @@ private:
     bool keyword_is_found = false;
     bool not_keyword = false;
 public:
-    KeywordsTree(std::vector<std::string> keywords);
-    KeywordsTree(void);
     void refresh_temp_tree();
     void set_keywords(std::vector<std::string> keywords);
     void find_keyword(char input_key);

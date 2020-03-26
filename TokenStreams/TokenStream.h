@@ -1,12 +1,10 @@
 #pragma once
 #include <string>
-#include "../Token.h"
 #include "../Tokenizer.h"
 
 
 class TokenStream {
 protected:
-    static TokenStream* instance;
     TokenStream* next_state;
     bool state_is_changed = false;
     bool token_is_generated;
@@ -15,7 +13,6 @@ protected:
     char prev_char;
 public:
     virtual void interrupt_stream() = 0;
-    virtual void generate_instance() = 0;
     void set_string_input(std::string string_input);
     void set_token_addr(Token* token_addr);
     bool has_generated_token();

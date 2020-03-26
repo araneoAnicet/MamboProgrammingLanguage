@@ -1,8 +1,5 @@
 #include "KeywordsTree.h"
 
-KeywordsTree::KeywordsTree(std::vector<std::string> keywords) {
-    this->set_keywords(keywords);
-}
 
 void KeywordsTree::set_keywords(std::vector<std::string> keywords) {
     std::stack<char>* temp_stack;

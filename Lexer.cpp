@@ -1,13 +1,15 @@
 #include "Lexer.h"
 #include "TokenStreams/TokenStream.h"
+#include "TokenStreams/KeywordStream.h"
 
-std::vector<Token*> Lexer::tokenize() {
+
+std::vector<Token> Lexer::tokenize() {
     return this->tokens;
 }
 
 void Lexer::identify_lexemes(std::string filename) {
-    TokenStream* token_stream;
-    Token* temp_token = nullptr;
+    TokenStream* token_stream = new KeywordStream();
+    Token* temp_token = new Token(0, "");
     std::fstream file(filename);
     std::string line;
     int line_index = 1;
@@ -17,10 +19,8 @@ void Lexer::identify_lexemes(std::string filename) {
             token_stream->pattern_check(character);
             if (token_stream->has_generated_token()) {
                 temp_token->line_index = line_index;
-                this->tokens.push_back(temp_token);
-            }
-            if (token_stream->has_changed_state()) {
-                token_stream = token_stream->get_next_state();
+                this->tokens.push_back(*temp_token);
+                token_stream->interrupt_stream();
             }
         }
         line_index++;
