@@ -25,4 +25,6 @@ void Lexer::identify_lexemes(std::string filename) {
         }
         line_index++;
     }
+    delete token_stream;
+    delete temp_token;
 }
