@@ -9,7 +9,7 @@ std::vector<Token> Lexer::tokenize() {
 
 void Lexer::identify_lexemes(std::string filename) {
     TokenStream* token_stream = new KeywordStream();
-    Token* temp_token = new Token(0, "", 0);
+    Token* temp_token = new Token(0, "");
     std::fstream file(filename);
     std::string line;
     int line_index = 1;
