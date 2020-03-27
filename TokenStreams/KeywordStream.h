@@ -3,7 +3,6 @@
 #include "KeywordsTree.h"
 #include "StringStream.h"
 #include "../Tokenizer.h"
-#include <iostream>
 
 
 class KeywordStream: public TokenStream {

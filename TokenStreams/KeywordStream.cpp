@@ -1,7 +1,6 @@
 #include "KeywordStream.h"
 
 KeywordStream::KeywordStream() {
-    std::cout << "Init KeywordStream" << std::endl;
     this->tree.set_keywords({
         "func",
         "import",
