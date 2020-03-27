@@ -1,10 +1,6 @@
 #include "StringStream.h"
 
 
-void StringStream::set_prev_char(char prev_char) {
-    this->prev_char = prev_char;
-}
-
 void StringStream::pattern_check(char input) {
     this->string_input += prev_char;
     this->prev_char = input;
