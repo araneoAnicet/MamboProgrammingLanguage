@@ -24,3 +24,7 @@ bool TokenStream::has_generated_token() {
 void TokenStream::set_prev_char(char prev_char) {
     this->prev_char = prev_char;
 }
+
+void TokenStream::reset_state_status() {
+    this->state_is_changed = false;
+}

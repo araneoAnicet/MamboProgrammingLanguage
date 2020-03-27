@@ -7,7 +7,7 @@ class TokenStream {
 protected:
     TokenStream* next_state;
     bool state_is_changed = false;
-    bool token_is_generated;
+    bool token_is_generated = false;
     std::string string_input;
     Token* token_addr;
     char prev_char;
@@ -19,5 +19,6 @@ public:
     bool has_changed_state();
     TokenStream* get_next_state();
     void set_prev_char(char prev_char);
+    void reset_state_status();
     virtual void pattern_check(char input) = 0;
 };

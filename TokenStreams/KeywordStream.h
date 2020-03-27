@@ -1,6 +1,7 @@
 #pragma once
 #include "TokenStream.h"
 #include "KeywordsTree.h"
+#include "StringStream.h"
 #include "../Tokenizer.h"
 #include <iostream>
 
