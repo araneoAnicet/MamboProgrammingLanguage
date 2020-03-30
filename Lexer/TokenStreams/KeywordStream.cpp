@@ -39,7 +39,7 @@ void KeywordStream::pattern_check(char input) {
             delete temp_token_addr;
             this->token_is_generated = true;
         }
-        this->next_state = std::make_shared<TokenStream>(new StringStream());
+        this->next_state = std::make_shared<StringStream>();
         this->next_state->set_token_addr(this->token_addr);
         this->state_is_changed = true;
     }

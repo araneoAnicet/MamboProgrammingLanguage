@@ -1,3 +1,4 @@
+#pragma once
 #include "Token.h"
 #include "Tokenizer.h"
 #include "TokenStreams/KeywordStream.h"
