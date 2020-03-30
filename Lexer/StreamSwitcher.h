@@ -15,14 +15,15 @@
 
 class StreamSwitcher {
 private:
-    std::map<int, TokenStream*> flags;
-
+    char prev_char;
+    int switch_flag;
 public:
     StreamSwitcher();
+    int get_flag();
     bool check_dividing_symbol(char input);
     bool check_string(char input);
     bool check_comment(char input);
     bool check_number(char input);
     bool check_variable(char input);
-    TokenStream* switch_stream();
+    std::shared_ptr<TokenStream> get_stream();
 };
