@@ -2,12 +2,14 @@
 #include <string>
 #include <memory>
 #include "../Tokenizer.h"
+#include "../StreamSwitcher.h"
 
 
 class TokenStream {
 protected:
     std::shared_ptr<TokenStream> next_state;
     bool state_is_changed = false;
+    StreamSwitcher stream_switcher;
     bool token_is_generated = false;
     std::string string_input;
     Token* token_addr;
