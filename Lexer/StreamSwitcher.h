@@ -6,24 +6,17 @@
 #include <map>
 
 
-// token stream flags
-#define FLAG_DIV_SYMB 0
-#define FLAG_STR 1
-#define FLAG_COMM 2
-#define FLAG_NUM 3
-#define FLAG_VAR 4
-
 class StreamSwitcher {
 private:
+    std::shared_ptr<TokenStream> current_stream;
+    char current_char;
     char prev_char;
-    int switch_flag;
 public:
-    StreamSwitcher();
-    int get_flag();
-    bool check_dividing_symbol(char input);
-    bool check_string(char input);
-    bool check_comment(char input);
-    bool check_number(char input);
-    bool check_variable(char input);
+    void shift_chars(char input);
+    bool check_dividing_symbol();
+    bool check_string();
+    bool check_comment();
+    bool check_number();
+    bool check_variable();
     std::shared_ptr<TokenStream> get_stream();
 };
