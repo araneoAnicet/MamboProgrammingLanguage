@@ -17,8 +17,3 @@ void StringStream::pattern_check(char input) {
         return;
     }
 }
-
-void StringStream::interrupt_stream() {
-    this->string_input = "";
-    this->token_is_generated = false;
-}

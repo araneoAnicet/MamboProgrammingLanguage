@@ -16,11 +16,6 @@ KeywordStream::KeywordStream() {
     });
 }
 
-void KeywordStream::interrupt_stream() {
-    this->token_is_generated = false;
-    this->ignore_input = false;
-}
-
 void KeywordStream::set_prev_char(char prev_char) {
     this->tree.find_keyword(prev_char);
     if (this->tree.has_found_not_keyword()) {

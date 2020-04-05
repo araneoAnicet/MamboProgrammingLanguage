@@ -15,7 +15,6 @@ protected:
     Token* token_addr;
     char prev_char;
 public:
-    virtual void interrupt_stream() = 0;
     void set_string_input(std::string string_input);
     void set_token_addr(Token* token_addr);
     bool has_generated_token();
