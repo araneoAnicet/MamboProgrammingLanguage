@@ -22,6 +22,8 @@
 #define MMB_BRCKT_CLS_SQR 14
 #define MMB_BRCKT_OPN_FIG 15
 #define MMB_BRCKT_CLS_FIG 16
+#define MMB_DOT 17
+#define MMB_NUM_FLOAT 18
 
 
 class Tokenizer {

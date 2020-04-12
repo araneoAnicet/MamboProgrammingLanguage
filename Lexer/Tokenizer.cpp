@@ -9,7 +9,6 @@ std::map<char, int> Tokenizer::dividing_symbols = {
         {'+', MMB_PLUS},
         {'-', MMB_MINUS},
         {'*', MMB_MULT},
-        {'/', MMB_DIV},
         {'\"', MMB_QUOTE_DOUBLE},
         {'\'', MMB_QUOTE},
         {'(', MMB_BRCKT_OPN},
@@ -17,6 +16,7 @@ std::map<char, int> Tokenizer::dividing_symbols = {
         {'[', MMB_BRCKT_OPN_SQR},
         {']', MMB_BRCKT_CLS_SQR},
         {'{', MMB_BRCKT_OPN_FIG},
-        {'}', MMB_BRCKT_CLS_FIG}
+        {'}', MMB_BRCKT_CLS_FIG},
+        {'.', MMB_DOT}
 };
 
