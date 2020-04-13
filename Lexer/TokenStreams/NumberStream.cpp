@@ -55,6 +55,8 @@ void NumberStream::pattern_check(char input) {
         this->stream_switcher.shift_chars(input);
         this->string_input += input;
         this->switch_state();
+        this->next_state->set_string_input(this->string_input);
+        this->next_state->set_prev_char(input);
         return;
     }
 }
