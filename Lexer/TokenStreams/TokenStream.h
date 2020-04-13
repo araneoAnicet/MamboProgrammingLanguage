@@ -21,6 +21,5 @@ public:
     bool has_changed_state();
     std::shared_ptr<TokenStream> get_next_state();
     void set_prev_char(char prev_char);
-    void reset_state_status();
     virtual void pattern_check(char input) = 0;
 };
