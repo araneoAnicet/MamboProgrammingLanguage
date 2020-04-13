@@ -2,6 +2,7 @@
 
 void NumberStream::switch_state() {
     this->next_state = this->stream_switcher.get_stream();
+    this->next_state->set_token_addr(this->token_addr);
     this->has_changed_state = true;
 }
 
