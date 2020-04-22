@@ -8,7 +8,7 @@
 
 class StreamSwitcher {
 private:
-    std::shared_ptr<TokenStream> current_stream;
+    std::shared_ptr<TokenStream> current_stream = nullptr;
     char current_char;
     char prev_char;
 public:
