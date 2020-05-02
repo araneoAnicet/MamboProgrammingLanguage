@@ -29,7 +29,6 @@ void Lexer::identify_lexemes(std::string filename) {
             if (token_stream->has_changed_state()) {
                 prev_state = token_stream;
                 token_stream = token_stream->get_next_state();
-                token_stream->set_prev_char(character);
             }
         }
         line_index++;
