@@ -23,7 +23,7 @@ bool StreamSwitcher::check_string() {
 }
 
 bool StreamSwitcher::check_comment() {
-    if (this->current_char == '/') {
+    if (this->current_char == '/' && this->prev_char == '/') {
         this->current_stream = std::make_shared<CommentStream>();
         return true;
     }

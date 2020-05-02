@@ -4,6 +4,7 @@
 #include "../Tokenizer.h"
 #include "../StreamSwitcher.h"
 
+class StreamSwitcher;
 
 class TokenStream {
 protected:

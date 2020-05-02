@@ -3,7 +3,13 @@
 #include "Tokenizer.h"
 #include "TokenStreams/KeywordStream.h"
 #include "TokenStreams/StringStream.h"
+#include "TokenStreams/CommentStream.h"
+#include "TokenStreams/KeywordStream.h"
+#include "TokenStreams/NumberStream.h"
+#include "TokenStreams/SingleSymbolStream.h"
+#include "TokenStreams/VariableStream.h"
 #include <map>
+
 
 
 class StreamSwitcher {
