@@ -9,7 +9,6 @@ std::vector<Token> Lexer::tokenize() {
 
 void Lexer::identify_lexemes(std::string filename) {
     std::shared_ptr<TokenStream> token_stream = std::make_shared<KeywordStream>();
-    std::shared_ptr<TokenStream> prev_state;
     Token* temp_token = new Token(0, "");
     std::fstream file(filename);
     std::string line;
@@ -27,7 +26,6 @@ void Lexer::identify_lexemes(std::string filename) {
             }
 
             if (token_stream->has_changed_state()) {
-                prev_state = token_stream;
                 token_stream = token_stream->get_next_state();
             }
         }
