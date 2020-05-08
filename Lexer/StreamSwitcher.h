@@ -19,6 +19,7 @@ private:
     char prev_char;
 public:
     void shift_chars(char input);
+    bool check_ignored_symbol();
     bool check_dividing_symbol();
     bool check_string();
     bool check_comment();

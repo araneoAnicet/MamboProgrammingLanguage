@@ -6,6 +6,18 @@ void StreamSwitcher::shift_chars(char input) {
     this->current_char = input;
 }
 
+bool StreamSwitcher::check_ignored_symbol() {
+    if (
+        this->current_char == '\n'
+        || this->current_char == '\t'
+        || this->current_char == ' '
+        ) {
+            this->current_stream = std::make_shared<KeywordStream>();
+            return true;
+        }
+        return false;
+}
+
 bool StreamSwitcher::check_dividing_symbol() {
     if (Tokenizer::dividing_symbols.find(this->current_char) == Tokenizer::dividing_symbols.end()) {
         this->current_stream = std::make_shared<SingleSymbolStream>();
