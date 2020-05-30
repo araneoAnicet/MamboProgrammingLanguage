@@ -17,11 +17,7 @@ KeywordStream::KeywordStream() {
 }
 
 void KeywordStream::set_prev_char(char prev_char) {
-    this->tree.find_keyword(prev_char);
-    if (this->tree.has_found_not_keyword()) {
-        this->tree.refresh_temp_tree();
-        // fix here
-    }
+    this->pattern_check(prev_char);
 }
 
 
@@ -61,28 +57,32 @@ void KeywordStream::pattern_check(char input) {
         this->lexemes_have_only_digits = false;
     }
 
-    if (this->stream_switcher.check_ignored_symbol()) {  // next state is KeywordStream    
-        this->record_token_and_switch_state();
-        this->next_state->set_prev_char(input);
-        return;
-    }
-
-    if (this->stream_switcher.check_string()) {    
-        this->record_token_and_switch_state();
-        this->next_state->set_prev_char(input);
-        return;
-    }
-
-    if (this->stream_switcher.check_dividing_symbol()) {
+    if (this->tree.has_found_keyword() || this->tree.has_found_not_keyword()) {
+        if (this->stream_switcher.check_ignored_symbol()) {  // next state is KeywordStream    
             this->record_token_and_switch_state();
             this->next_state->set_prev_char(input);
             return;
-    }
+        }
 
-    if (this->stream_switcher.check_variable()) {
-        this->switch_state();
-        this->next_state->set_string_input(this->string_input);
-        this->next_state->set_prev_char(input);
+        if (this->stream_switcher.check_string()) {    
+            this->record_token_and_switch_state();
+            this->next_state->set_prev_char(input);
+            return;
+        }
+
+        if (this->stream_switcher.check_dividing_symbol()) {
+                this->record_token_and_switch_state();
+                this->next_state->set_prev_char(input);
+                return;
+        }
+
+        if (this->stream_switcher.check_variable()) {
+            this->switch_state();
+            this->next_state->set_string_input(this->string_input);
+            this->next_state->set_prev_char(input);
+            return;
+        }
     }
+    this->string_input += input;
     
 }
